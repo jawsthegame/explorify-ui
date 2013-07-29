@@ -18,7 +18,7 @@
           albumString = 'spotify:album:'
           if (input.val().indexOf(albumString) == 0) {
             var album = input.val().replace(albumString, '');
-            addChart(album);
+            addChart(album, true);
           }
           input.val('');
         });
@@ -29,11 +29,11 @@
 
         $('#samples').click(function() {
           $('.charts').empty();
-          addChart('0yphhvodu9wyvksSgwJ7F1');
-          addChart('0Y0V072vxDWEvCelPBaWAO');
-          addChart('6J6nlVu4JMveJz0YM9zDgL');
-          addChart('3LIsuX99RAJJTq0L1gHh4g');
-          addChart('4UlA8Vpl8B7vzVvyigEpNJ');
+          addChart('0yphhvodu9wyvksSgwJ7F1', true);
+          addChart('0Y0V072vxDWEvCelPBaWAO', true);
+          addChart('6J6nlVu4JMveJz0YM9zDgL', true);
+          addChart('3LIsuX99RAJJTq0L1gHh4g', true);
+          addChart('4UlA8Vpl8B7vzVvyigEpNJ', true);
         });
       });
     </script>
@@ -43,7 +43,7 @@
     <div class="container">
       <div class="row">
         <h1>Explorify</h1>
-        <h3>Relative Track Popularity</h3>
+        <h3>Relative vs. Overall Popularity</h3>
         <hr/>
         <div id="album_form" class="row">
           <input type="text" name="album_id"

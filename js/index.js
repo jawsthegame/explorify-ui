@@ -22,11 +22,13 @@ function addChart(album, showOverall) {
 
     $el = $('<div>')
     $('.charts').append($el);
-    var chart = new google.visualization.AreaChart($el[0]);
+    var chart = new google.visualization.ComboChart($el[0]);
     chart.draw(dataTable, {
       title: '\'' + result.name + '\'' + ' by ' + result.artist,
       titleTextStyle: { fontSize: 16, color: '#E3D5B6' },
       areaOpacity: '0.6',
+      seriesType: 'area',
+      series: { 1: { type: 'line', lineWidth: 2 } },
       lineWidth: 0,
       pointSize: 0,
       colors: ['#3497C2', '#DBAB39'],
