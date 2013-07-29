@@ -1,6 +1,6 @@
 function drawCharts(albums) {
   albums.forEach(function(album) {
-    $.getJSON("http://localhost:5001/" + album).done(function(result) {
+    $.getJSON("http://jaws.tomfleischer.com:5001/" + album).done(function(result) {
       data = []
       result.tracks.forEach(function(track) {
         data.push([track.num, track.rel_pop, track.name])
