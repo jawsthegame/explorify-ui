@@ -18,7 +18,7 @@
           albumString = 'spotify:album:'
           if (input.val().indexOf(albumString) == 0) {
             var album = input.val().replace(albumString, '');
-            addChart(album, true);
+            addChart(album, $('input[name=show_pie]').prop('checked'));
           }
           input.val('');
         });
@@ -29,11 +29,12 @@
 
         $('#samples').click(function() {
           $('.charts').empty();
-          addChart('0yphhvodu9wyvksSgwJ7F1', true);
-          addChart('0Y0V072vxDWEvCelPBaWAO', true);
-          addChart('6J6nlVu4JMveJz0YM9zDgL', true);
-          addChart('3LIsuX99RAJJTq0L1gHh4g', true);
-          addChart('4UlA8Vpl8B7vzVvyigEpNJ', true);
+          showPie = $('input[name=show_pie]').prop('checked');
+          addChart('0yphhvodu9wyvksSgwJ7F1', showPie);
+          addChart('0Y0V072vxDWEvCelPBaWAO', showPie);
+          addChart('6J6nlVu4JMveJz0YM9zDgL', showPie);
+          addChart('3LIsuX99RAJJTq0L1gHh4g', showPie);
+          addChart('4UlA8Vpl8B7vzVvyigEpNJ', showPie);
         });
       });
     </script>
@@ -46,11 +47,19 @@
         <h3>Relative vs. Overall Popularity</h3>
         <hr/>
         <div id="album_form" class="row">
-          <input type="text" name="album_id"
-            placeholder="Enter a Spotify Album URI" />
-          <button id="add_album">Add</button>
-          <button id="clear">Clear</button>
-          <button id="samples">Samples</button>
+          <div>
+            <input type="text" name="album_id"
+              placeholder="Enter a Spotify Album URI" />
+          </div>
+          <div>
+            <input id="show_pie" name="show_pie" type="checkbox" />
+            <label for="show_pie">Show Pie Chart</label>
+          </div>
+          <div>
+            <button id="add_album">Add</button>
+            <button id="clear">Clear</button>
+            <button id="samples">Samples</button>
+          </div>
         </div>
       </div>
       <div class="row">

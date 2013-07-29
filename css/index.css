@@ -24,6 +24,11 @@ hr {
   margin: 10px 0 20px 0;
 }
 
+#album_form > div {
+  margin-right: 10px;
+  display:      inline-block;
+}
+
 input[name=album_id] {
   width: 300px;
 }
