@@ -88,8 +88,7 @@ function addPieChart(result, $el) {
 }
 
 function addChart(album, showPie) {
-  // var url = "http://server.jawsapps.com/explorify/" + album
-  var url = "http://localhost:5001/" + album
+  var url = "http://server.jawsapps.com/explorify/" + album
   $.getJSON(url).done(function(result) {
     $el = $('<div>').addClass('row');
     $('.charts').append($el);
