@@ -1,5 +1,6 @@
 function addChart(album, showOverall) {
-  $.getJSON("http://jaws.tomfleischer.com:5001/" + album).done(function(result) {
+  var url = "http://server.jawsapps.com/explorify/" + album
+  $.getJSON(url).done(function(result) {
     data = []
     result.tracks.forEach(function(track) {
       if (showOverall) {
