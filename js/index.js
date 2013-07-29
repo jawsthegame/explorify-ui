@@ -11,6 +11,7 @@ function addChart(album) {
     dataTable.addRows(data);
 
     $el = $('<div>')
+    $el.append($('h3').val('Album Track Popularity'));
     $('.charts').append($el);
     var chart = new google.visualization.AreaChart($el[0]);
     chart.draw(dataTable, {
