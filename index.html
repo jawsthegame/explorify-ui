@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link href='css/bootstrap.css' rel='stylesheet' type='text/css' />
+    <link href='css/index.css' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      $(document).ready(function() {
+        drawCharts([
+          '0yphhvodu9wyvksSgwJ7F1',
+          '0Y0V072vxDWEvCelPBaWAO',
+          '6J6nlVu4JMveJz0YM9zDgL',
+          '3LIsuX99RAJJTq0L1gHh4g',
+          '4UlA8Vpl8B7vzVvyigEpNJ',
+        ]);
+      });
+    </script>
+    <title>Explorify - Visualize Spotify</title>
+  </head>
+  <body>
+    <div class='container'>
+      <h1>Explorify</h1>
+      <br/>
+      <div class="charts"></div>
+    </div>
+  </body>
+</html>
