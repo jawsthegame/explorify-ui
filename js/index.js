@@ -28,7 +28,7 @@ function addChart(album, showOverall) {
       titleTextStyle: { fontSize: 16, color: '#E3D5B6' },
       areaOpacity: '0.6',
       lineWidth: 0,
-      pointSize: 3,
+      pointSize: 0,
       colors: ['#3497C2', '#DBAB39'],
       backgroundColor: '#333',
       fontName: 'Raleway',
@@ -47,7 +47,7 @@ function addChart(album, showOverall) {
       },
       vAxis: {
         textPosition: 'none',
-        baselineColor: 'transparent',
+        baselineColor: '#444',
         gridlines: { color: 'transparent' },
         viewWindow: { max: 1, min: 0 }
       }
