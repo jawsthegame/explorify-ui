@@ -6,5 +6,16 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family:  'Raleway', sans-serif;
-  color:        #EEE;
+}
+
+h1 {
+  color: #FCFCFC;
+}
+
+h3 {
+  color: #94BED4;
+}
+
+hr {
+  border-color: #666;
 }

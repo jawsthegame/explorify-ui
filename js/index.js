@@ -16,7 +16,7 @@ function drawCharts(albums) {
       var chart = new google.visualization.AreaChart($el[0]);
       chart.draw(dataTable, {
         title: '\'' + result.name + '\'' + ' by ' + result.artist,
-        titleTextStyle: { fontSize: 18, color: 'white' },
+        titleTextStyle: { fontSize: 18, color: '#E3D5B6' },
         areaOpacity: '0.6',
         backgroundColor: '#333',
         fontName: 'Raleway',
