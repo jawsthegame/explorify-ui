@@ -19,3 +19,11 @@ h3 {
 hr {
   border-color: #666;
 }
+
+#album_form {
+  margin: 10px 0 20px 0;
+}
+
+input[name=album_id] {
+  width: 300px;
+}
