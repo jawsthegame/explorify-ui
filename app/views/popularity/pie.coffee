@@ -15,23 +15,23 @@ class PopularityPieView extends Quips.View
 
   drawChart: ->
     @chart.draw @dataTable,
-      legend:
-        position: 'none'
       backgroundColor: '#333'
-      pieSliceBorderColor: '#444'
-      pieResidueSliceColor: '#444'
       chartArea:
         height: 120
-        top:    40
         left:   0
+        top:    40
+      legend:
+        position: 'none'
       lineWidth: 0
+      pieResidueSliceColor: '#444'
+      pieSliceBorderColor: '#444'
+      pieSliceText: 'none'
+      sliceVisibilityThreshold: '0.04'
       tooltip:
         text: 'percentage'
         textStyle:
           fontName: 'Raleway'
           fontSize: 12
-      pieSliceText: 'none'
-      sliceVisibilityThreshold: '0.04'
       width: 300
 
   _prepareChart: (result) ->

@@ -15,36 +15,36 @@ class PopularityComboView extends Quips.View
 
   drawChart: ->
     @chart.draw @dataTable,
-      title: @title
-      titleTextStyle:
-        fontSize: 16
-        color: '#E3D5B6'
       areaOpacity: '0.6'
-      seriesType: 'area'
-      series:
-        1:
-          type: 'line'
-          lineWidth: 2
-      lineWidth: 0
-      pointSize: 0
-      colors: ['#3497C2', '#DBAB39']
       backgroundColor: '#333'
-      fontName: 'Raleway'
       chartArea:
-        top:    40
-        left:   0
         height: 120
+        left:   0
+        top:    40
         width:  @$chart.width()
+      colors: ['#3497C2', '#DBAB39']
+      fontName: 'Raleway'
+      hAxis:
+        baselineColor: 'transparent'
+        gridlines: color: 'transparent'
+        textPosition: 'none'
       legend:
         position: 'none'
-      hAxis:
-        textPosition: 'none',
-        baselineColor: 'transparent',
-        gridlines: color: 'transparent'
+      lineWidth: 0
+      pointSize: 0
+      series:
+        1:
+          lineWidth: 2
+          type: 'line'
+      seriesType: 'area'
+      title: @title
+      titleTextStyle:
+        color: '#E3D5B6'
+        fontSize: 16
       vAxis:
-        textPosition: 'none',
-        baselineColor: '#444',
-        gridlines: color: 'transparent',
+        baselineColor: '#444'
+        gridlines: color: 'transparent'
+        textPosition: 'none'
         viewWindow:
           max: 1
           min: 0
