@@ -2,8 +2,8 @@ Quips     = require 'quips'
 $         = require 'jqueryify'
 Backbone  = require 'backbone'
 
-ArtistController      = require 'controllers/artist_controller'
-PopularityController  = require 'controllers/popularity_controller'
+ArtistController  = require 'controllers/artist_controller'
+AlbumController   = require 'controllers/album_controller'
 
 
 class App
@@ -17,12 +17,12 @@ class App
     $content = $layout.find('#main-content')
 
     new ArtistController(el: $content)
-    new PopularityController(el: $content)
+    new AlbumController(el: $content)
 
     Backbone.history.start()
 
     unless window.location.hash
-      Backbone.history.navigate '#/popularity'
+      Backbone.history.navigate '#/album'
 
 
 module.exports = App

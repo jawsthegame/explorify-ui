@@ -1,12 +1,12 @@
 Quips   = require 'quips'
 getJSON = require('jqueryify').getJSON
 
-PopularityChartsView  = require 'views/popularity/charts'
-PopularityFormView    = require 'views/popularity/form'
+AlbumChartsView  = require 'views/album/charts'
+AlbumFormView    = require 'views/album/form'
 
 
-class PopularityController extends Quips.Controller
-  layout: require 'templates/popularity/layout'
+class AlbumController extends Quips.Controller
+  layout: require 'templates/album/layout'
 
   views:
     '#album_form':  'formView'
@@ -17,11 +17,11 @@ class PopularityController extends Quips.Controller
     'formView.clear':   'clear'
 
   routes:
-    'popularity': 'activate'
+    'album': 'activate'
 
   constructor: ->
-    @formView = new PopularityFormView().render()
-    @chartsView = new PopularityChartsView().render()
+    @formView = new AlbumFormView().render()
+    @chartsView = new AlbumChartsView().render()
     super
 
   addCharts: (album, showPie) ->
@@ -32,4 +32,4 @@ class PopularityController extends Quips.Controller
   clear: -> @chartsView.clear()
 
 
-module.exports = PopularityController
+module.exports = AlbumController
