@@ -13,8 +13,11 @@ class PopularityController extends Quips.Controller
     '.charts':      'chartsView'
 
   events:
-    'formView.submit':        'addCharts'
-    'formView.clear':         'clear'
+    'formView.submit':  'addCharts'
+    'formView.clear':   'clear'
+
+  routes:
+    'popularity': 'activate'
 
   constructor: ->
     @formView = new PopularityFormView().render()
