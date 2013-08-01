@@ -9,26 +9,32 @@ h1, h2, h3, h4, h5
 h1
   color  #FCFCFC
 
-h3
-  color         #666
-  display       inline-block
-  border-left  1px solid #666
-  padding-left 20px
-  margin-left  20px
+ul.navigation
+  list-style-type none
+  font-size       16px
+  margin          0
+  padding         0
 
-  &:first-child
-    border        0
-    padding-left  0
-    margin-left   0
-
-  &.active
-    a
-      color #94BED4
-  a
+  li
     color         #666
+    display       inline-block
+    padding       5px 8px
+    margin        20px 0 0 0
 
-    &:hover
-      text-decoration none
+    &:first-child
+      border        0
+      margin-left   0
+
+    &.active
+      background-color #444
+
+      a
+        color #94BED4
+    a
+      color         #666
+
+      &:hover
+        text-decoration none
 
 hr
   border-color  #666
