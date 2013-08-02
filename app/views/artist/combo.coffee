@@ -52,11 +52,13 @@ class AristComboView extends Quips.View
   _prepareChart: (result) ->
     data = []
     for a, i in result.albums
-      data.push [i, 0, a.pop, "#{a.name} (#{a.year})"]
+      tooltip = "#{a.name} (#{a.year})"
+      data.push [i, a.rel_pop, tooltip, a.pop, tooltip]
 
     @dataTable = new google.visualization.DataTable
     @dataTable.addColumn 'number', 'Index'
     @dataTable.addColumn 'number', 'Relative'
+    @dataTable.addColumn type: 'string', role: 'tooltip'
     @dataTable.addColumn 'number', 'Overall'
     @dataTable.addColumn type: 'string', role: 'tooltip'
     @dataTable.addRows(data)

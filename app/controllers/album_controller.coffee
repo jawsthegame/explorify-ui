@@ -25,9 +25,11 @@ class AlbumController extends Quips.Controller
     super
 
   addCharts: (album, showPie) ->
+    @formView.block message: 'Loading Artist Data...'
     url = "#{Quips.host}/album/#{album}"
     getJSON(url).done (result) =>
       @chartsView.add(result, showPie)
+      @formView.unblock()
 
   clear: -> @chartsView.clear()
 
