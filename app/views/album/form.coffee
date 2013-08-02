@@ -1,8 +1,8 @@
 Quips = require 'quips'
 
 
-class PopularityFormView extends Quips.View
-  template: require 'templates/popularity/form'
+class AlbumFormView extends Quips.View
+  template: require 'templates/album/form'
 
   events:
     'click #add_album': 'addAlbum'
@@ -33,4 +33,4 @@ class PopularityFormView extends Quips.View
   _showPie: -> @$showPie.prop('checked')
 
 
-module.exports = PopularityFormView
+module.exports = AlbumFormView

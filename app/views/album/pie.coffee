@@ -1,8 +1,8 @@
 Quips = require 'quips'
 
 
-class PopularityPieView extends Quips.View
-  template:   require 'templates/popularity/pie'
+class AlbumPieView extends Quips.View
+  template:   require 'templates/album/pie'
   className:  'col-2'
 
   elements:
@@ -45,4 +45,4 @@ class PopularityPieView extends Quips.View
     @chart = new google.visualization.PieChart @$chart[0]
 
 
-module.exports = PopularityPieView
+module.exports = AlbumPieView

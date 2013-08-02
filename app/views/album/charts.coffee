@@ -1,12 +1,12 @@
 Quips = require 'quips'
 $     = require 'jqueryify'
 
-PopularityComboView = require 'views/popularity/combo'
-PopularityPieView   = require 'views/popularity/pie'
+AlbumComboView = require 'views/album/combo'
+AlbumPieView   = require 'views/album/pie'
 
 
-class PopularityChartsView extends Quips.View
-  template:   require 'templates/popularity/charts'
+class AlbumChartsView extends Quips.View
+  template:   require 'templates/album/charts'
 
   add: (result, showPie) ->
     $row = $('<div>').addClass 'row'
@@ -18,14 +18,14 @@ class PopularityChartsView extends Quips.View
     @$el.empty()
 
   _addCombo: (result, $row) ->
-    combo = new PopularityComboView().render(result)
+    combo = new AlbumComboView().render(result)
     $row.append combo.$el
     combo.drawChart()
 
   _addPie: (result, $row) ->
-    pie = new PopularityPieView().render(result)
+    pie = new AlbumPieView().render(result)
     $row.append pie.$el
     pie.drawChart()
 
 
-module.exports = PopularityChartsView
+module.exports = AlbumChartsView

@@ -9,20 +9,44 @@ h1, h2, h3, h4, h5
 h1
   color  #FCFCFC
 
-h3
-  color  #94BED4
+ul.navigation
+  list-style-type none
+  font-size       16px
+  margin          0
+  padding         0
+
+  li
+    color         #666
+    display       inline-block
+    padding       5px 8px
+    margin        6px 0 0 0
+
+    &:first-child
+      border        0
+      margin-left   0
+
+    &.active
+      background-color #444
+
+      a
+        color #94BED4
+    a
+      color         #666
+
+      &:hover
+        text-decoration none
 
 hr
   border-color  #666
 
-#album_form
+#album_form, #artist_form
   margin  10px 0 20px 0
 
   .section
     margin-right  10px
     display       inline-block
 
-input[name=album_id]
+input[name=album_id], input[name=artist_id]
   width 320px
 
 .combo-chart
