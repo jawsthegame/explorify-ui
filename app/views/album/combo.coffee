@@ -1,8 +1,8 @@
 Quips = require 'quips'
 
 
-class PopularityComboView extends Quips.View
-  template:   require 'templates/popularity/combo'
+class AlbumComboView extends Quips.View
+  template:   require 'templates/album/combo'
   className:  'col-10'
 
   elements:
@@ -64,4 +64,4 @@ class PopularityComboView extends Quips.View
     @title = "'#{result.name}' by #{result.artist}"
 
 
-module.exports = PopularityComboView
+module.exports = AlbumComboView
