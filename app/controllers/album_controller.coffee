@@ -25,7 +25,7 @@ class AlbumController extends Quips.Controller
     super
 
   addCharts: (album, showPie) ->
-    url = "#{Quips.host}/#{album}"
+    url = "#{Quips.host}/album/#{album}"
     getJSON(url).done (result) =>
       @chartsView.add(result, showPie)
 

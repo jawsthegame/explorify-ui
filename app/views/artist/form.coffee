@@ -14,8 +14,8 @@ class ArtistFormView extends Quips.View
 
   addArtist: ->
     artistString = 'spotify:artist:'
-    if @$artistId.val().indexOf(albumString) is 0
-      artist = @$albumId.val().replace(albumString, '')
+    if @$artistId.val().indexOf(artistString) is 0
+      artist = @$artistId.val().replace(artistString, '')
       @trigger 'submit', artist
     @$artistId.val('')
 
