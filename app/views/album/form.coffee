@@ -10,23 +10,30 @@ class AlbumFormView extends Quips.View
     'click #samples':   'addSamples'
 
   elements:
-    'input[name=album_id]': '$albumId'
+    'input[name=id]': '$id'
     'input[name=show_pie]': '$showPie'
 
   addAlbum: ->
     albumString = 'spotify:album:'
-    if @$albumId.val().indexOf(albumString) is 0
-      album = @$albumId.val().replace(albumString, '')
-      @trigger 'submit', album, @_showPie()
-    @$albumId.val('')
+    artistString = 'spotify:artist:'
+    id = @$id.val()
+    if id.indexOf(albumString) is 0
+      album = id.replace(albumString, '')
+      @trigger 'submit-album', [album], @_showPie()
+    else if id.indexOf(artistString) is 0
+      artist = id.replace(artistString, '')
+      @trigger 'submit-artist', artist, @_showPie()
+    @$id.val('')
 
   addSamples: ->
     @clear()
-    @trigger 'submit', '0yphhvodu9wyvksSgwJ7F1', @_showPie()
-    @trigger 'submit', '0Y0V072vxDWEvCelPBaWAO', @_showPie()
-    @trigger 'submit', '6J6nlVu4JMveJz0YM9zDgL', @_showPie()
-    @trigger 'submit', '3LIsuX99RAJJTq0L1gHh4g', @_showPie()
-    @trigger 'submit', '4UlA8Vpl8B7vzVvyigEpNJ', @_showPie()
+    @trigger 'submit', [
+      '0yphhvodu9wyvksSgwJ7F1',
+      '0Y0V072vxDWEvCelPBaWAO',
+      '6J6nlVu4JMveJz0YM9zDgL',
+      '3LIsuX99RAJJTq0L1gHh4g',
+      '4UlA8Vpl8B7vzVvyigEpNJ'
+      ], @_showPie()
 
   clear: -> @trigger 'clear'
 

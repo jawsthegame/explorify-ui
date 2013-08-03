@@ -24,12 +24,16 @@ class ArtistController extends Quips.Controller
     @chartsView = new ArtistChartsView().render()
     super
 
-  addCharts: (artist) ->
+  addCharts: (artists) ->
     @formView.block message: 'Loading Artist Data...'
-    url = "#{Quips.host}/artist/#{artist}"
-    getJSON(url).done (result) =>
-      @chartsView.add(result)
-      @formView.unblock()
+    processed = 0
+    for artist in artists
+      url = "#{Quips.host}/artist/#{artist}"
+      getJSON(url).done (result) =>
+        @chartsView.add(result)
+        if processed is artists.length - 1
+          @formView.unblock()
+        processed++
 
   clear: -> @chartsView.clear()
 

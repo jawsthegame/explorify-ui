@@ -16,11 +16,13 @@ class ArtistFormView extends Quips.View
     artistString = 'spotify:artist:'
     if @$artistId.val().indexOf(artistString) is 0
       artist = @$artistId.val().replace(artistString, '')
-      @trigger 'submit', artist
+      @trigger 'submit', [artist]
     @$artistId.val('')
 
   addSamples: ->
     @clear()
+    $.unblock = ->
+    @trigger 'submit', ['2JpHk8yju1DH1l3c9sXzOS', '3xZBpeXHkSjTKQIR1OeKN0']
 
   clear: -> @trigger 'clear'
 

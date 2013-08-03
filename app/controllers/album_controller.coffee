@@ -13,8 +13,9 @@ class AlbumController extends Quips.Controller
     '.charts':      'chartsView'
 
   events:
-    'formView.submit':  'addCharts'
-    'formView.clear':   'clear'
+    'formView.submit-album':  'addCharts'
+    'formView.submit-artist': 'addChartsForArtist'
+    'formView.clear':         'clear'
 
   routes:
     'album': 'activate'
@@ -24,12 +25,24 @@ class AlbumController extends Quips.Controller
     @chartsView = new AlbumChartsView().render()
     super
 
-  addCharts: (album, showPie) ->
+  addCharts: (albums, showPie) ->
+    @formView.block message: 'Loading Album Data...'
+    processed = 0
+    for album in albums
+      url = "#{Quips.host}/album/#{album}"
+      getJSON(url).done (result) =>
+        @chartsView.add(result, showPie)
+        if processed is albums.length - 1
+          @formView.unblock()
+        processed++
+
+  addChartsForArtist: (artist, showPie) ->
     @formView.block message: 'Loading Artist Data...'
-    url = "#{Quips.host}/album/#{album}"
+    url = "#{Quips.host}/artist/#{artist}/albums"
     getJSON(url).done (result) =>
-      @chartsView.add(result, showPie)
-      @formView.unblock()
+      @addCharts(
+        (album.replace('spotify:album:', '') for album in result),
+        showPie)
 
   clear: -> @chartsView.clear()
 
